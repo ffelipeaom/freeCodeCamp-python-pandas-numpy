@@ -11,13 +11,13 @@ def calculate(list):
   #return a dictionary containing mean, variance, standard deviation, max, min, and sum along both axes and for the flattened matrix  
   #values in the returned dictionary should be lists and not Numpy arrays
     calculations = {
-    'mean': [np.mean(arr,axis=0), np.mean(arr,axis=1), np.mean(arr.flatten())],
-    #'variance': [axis1, axis2, flattened],
-    'standard deviation': [np.std(arr,axis=0), np.std(arr,axis=1), np.mean(arr.flatten())],
-    #'max': [axis1, axis2, flattened],
-    #'min': [axis1, axis2, flattened],
-    'sum': [np.sum(arr,axis=0), np.sum(arr,axis=1), np.sum(arr.flatten())]
+    'mean': [np.mean(arr,axis=0).tolist(), np.mean(arr,axis=1).tolist(), np.mean(arr.flatten()).tolist()],
+    'variance': [np.var(arr,axis=0).tolist(), np.var(arr,axis=1).tolist(), np.var(arr.flatten()).tolist()],
+    'standard deviation': [np.std(arr,axis=0).tolist(), np.std(arr,axis=1).tolist(), np.mean(arr.flatten()).tolist()],
+    'max': [np.max(arr,axis=0).tolist(), np.max(arr,axis=1).tolist(), np.max(arr.flatten()).tolist()],
+    'min': [np.min(arr,axis=0).tolist(), np.min(arr,axis=1).tolist(), np.min(arr.flatten()).tolist()],
+    'sum': [np.sum(arr,axis=0).tolist(), np.sum(arr,axis=1).tolist(), np.sum(arr.flatten()).tolist()]
   }
   except:
-    calculations = "List must contain nine numbers.";
+    calculations = "List must contain nine numbers.";   
   return calculations
